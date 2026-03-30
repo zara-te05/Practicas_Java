@@ -1,0 +1,14 @@
+1. Calculadora en consola
+	Operaciones básicas (+, -, *, /)
+	Uso de Scanner, condicionales y ciclos
+	Objetivo: perderle miedo a la sintaxis
+
+2. Conversor de unidades
+	°C ↔ °F, km ↔ millas, etc.
+	Menú interactivo
+	Aprendes: funciones/métodos
+
+3. Juego “Adivina el número”
+	Número aleatorio
+	Intentos limitados
+	Aprendes: lógica + Random

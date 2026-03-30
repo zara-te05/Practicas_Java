@@ -1,0 +1,2 @@
+Este proyecto busca crear, guardar, leer y editar archivos .txt 
+y .json 

@@ -1,0 +1,18 @@
+4. Gestor de tareas (To-Do en consola)
+	Agregar, eliminar, listar tareas
+	Aprendes:
+		ArrayList
+		CRUD básico
+
+5. Simulador de cajero automático (ATM)
+	Depositar, retirar, consultar saldo
+	Aprendes:
+		Encapsulación
+		Clases y objetos
+
+6. Mini sistema de estudiantes
+	Nombre, edad, promedio
+	Ordenar por promedio
+	Aprendes:
+		Collections.sort
+		Comparadores
