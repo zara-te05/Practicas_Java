@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        boolean running = true;
         System.out.println("Bienvenido a la conversora de unidades!!!");
 
         Scanner sc = new Scanner(System.in);
-        List<String> elementos = Arrays.asList("celsius", "fahrenheit", "kelvin");
+        List<String> elementos = Arrays.asList("celsius", "fahrenheit", "kelvin", "salir");
 
-        System.out.print("Ingrese la unidad de medida que va a convertir (Celsius, Fahrenheit, Kelvin): ");
+        System.out.print("Ingrese la unidad de medida que va a convertir (Celsius, Fahrenheit, Kelvin, Salir): ");
         String medida_inicial = sc.nextLine().toLowerCase();
 
         System.out.print("Ingrese la unidad a la que desea convertir (Celsius, Fahrenheit, Kelvin): ");
@@ -27,85 +28,108 @@ public class App {
             System.out.println("Elemento no encontrado");
         }
 
-        switch (medida_inicial) {
-
-            case "celsius":
-                switch (medida_final) {
-                    case "fahrenheit":
-                        Celsius_Fahrenheit(valor);
-                        break;
-
-                    case "kelvin":
-                        Celsius_Kelvin(valor);
-                        break;
-
-                    default:
-                        break;
-                }
-                break;
+        while (running) {
             
-            case "fahrenheit" :
-                switch (medida_final) {
-                    case "celsius":
-                        Fahrenheit_Celsius(valor);
-                        break;
+            switch (medida_inicial) {
 
-                    case "kelvin":
-                        Fahrenheit_Kelvin(valor);
-                        break;
+                case "celsius":
+                    switch (medida_final) {
+                        case "fahrenheit":
+                            Celsius_Fahrenheit(valor);
+                            break;
 
-                    default:
-                        break;
-                }
+                        case "kelvin":
+                            Celsius_Kelvin(valor);
+                            break;
+
+                        default:
+                            break;
+                    }
+                    break;
             
-            case "kelvin" :
-                switch (medida_final) {
-                    case "celsius":
-                        Kelvin_Celsius(valor);
-                        break;
+                case "fahrenheit" :
+                    switch (medida_final) {
+                        case "celsius":
+                            Fahrenheit_Celsius(valor);
+                            break;
 
-                    case "fahrenheit":
-                        Kelvin_Fahrenheit(valor);
-                        break;
-                        
-                    default:
-                        break;
-                }
-            default:
-                break;
+                        case "kelvin":
+                            Fahrenheit_Kelvin(valor);
+                            break;
 
+                        default:
+                            break;
+                    }
+                    break;
+            
+                case "kelvin" :
+                    switch (medida_final) {
+                        case "celsius":
+                            Kelvin_Celsius(valor);
+                            break;
+
+                        case "fahrenheit":
+                            Kelvin_Fahrenheit(valor);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+
+                case "salir" : 
+                    
+                    System.err.println("Saliendo...");
+                    sc.close();
+                    running = false;
+                    break;
+                    
+                default:
+                    break;
+
+            }
         }
-
-        sc.close();
     }
 
     public static double Celsius_Fahrenheit(double valor){
 
-        return (valor * 1.8) + 32;
+        double resultado = (valor * 1.8) + 32;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double Celsius_Kelvin(double valor){
 
-        return valor + 273.15;
+        double resultado = valor + 273.15;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double Fahrenheit_Celsius(double valor){
 
-        return (valor - 32) / 1.8;
+        double resultado = (valor - 32) / 1.8;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double Fahrenheit_Kelvin(double valor){
 
-        return (valor + 459.67) / 1.8;
+        double resultado = (valor + 459.67) / 1.8;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double Kelvin_Celsius(double valor){
 
-        return (valor - 273.15);
+        double resultado = (valor - 273.15);
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 
     public static double Kelvin_Fahrenheit(double valor){
 
-        return ((valor - 273.15) * 1.8) + 32;
+        double resultado = ((valor - 273.15) * 1.8) + 32;
+        System.out.println("El resultado es: " + resultado);
+        return resultado;
     }
 }
